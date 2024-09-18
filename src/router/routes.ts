@@ -3,14 +3,21 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/AuthLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: 'form', component: () => import('pages/FormPages.vue') },
+      { path: '', component: () => import('pages/LoginManege.vue') },
+      { path: 'Register', component: () => import('pages/RegisterPage.vue') },
     ],
   },
-  // Always leave this as last one,
-  // but you can also remove it
+  {
+    path: '/dashboard',
+    component: () => import('layouts/dashbordLayout.vue'),
+    children: [
+      { path: '/', component: () => import('pages/DashBorde.vue') },
+      { path: '/Form', component: () => import('pages/FormPage.vue') },
+      { path: '/portal', component: () => import('pages/PortalPage.vue') },
+    ],
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
