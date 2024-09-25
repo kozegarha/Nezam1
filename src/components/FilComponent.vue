@@ -10,14 +10,22 @@
       <div class="row">
         <div class="row">
           <div class="col-6">نام*</div>
-          <q-input standout class="q-my-xs" v-model="firstname" />
+          <q-input
+            standout
+            class="q-my-xs"
+            :model-value="modelValue.firstName"
+          />
         </div>
 
         <div>
           <div class="row">
             <div class="col-6">نام و نام خانوادگی*</div>
 
-            <q-input standout class="q-my-xs" v-model="lastname" />
+            <q-input
+              standout
+              class="q-my-xs"
+              :model-value="modelValue.lastName"
+            />
           </div>
         </div>
 
@@ -30,7 +38,11 @@
         </div>
         <div class="col-12">
           <div class="col-6">کد ملی *</div>
-          <q-input standout class="q-my-xs" v-model="password" />
+          <q-input
+            standout
+            class="q-my-xs"
+            :model-value="modelValue.password"
+          />
         </div>
         <div class="row">
           <div class="col-6 q-mb-xs">تاریخ تولد</div>
@@ -38,29 +50,37 @@
           <div class="row">
             <div class="col-4">
               <div>روز</div>
-              <div>
-                <q-select outlined v-model="model" :options="options" />
+              <div class="col">
+                <q-select
+                  outlined
+                  v-model="day"
+                  :options="optionsDays"
+                  dense
+                  style="min-width: 100px"
+                />
               </div>
             </div>
             <div class="col-4">
               <div>ماه</div>
-              <div>
+              <div class="col">
                 <q-select
                   outlined
-                  v-model="mod"
-                  :options="option2"
-                  label="Outlined"
+                  v-model="mounth"
+                  :options="optionsMounth"
+                  dense
+                  style="min-width: 100px"
                 />
               </div>
             </div>
             <div class="col-4">
               <div>سال</div>
-              <div>
+              <div class="col">
                 <q-select
                   outlined
-                  v-model="model1"
-                  :option="option3"
-                  label="Outlined"
+                  v-model="years"
+                  :options="optionsYears"
+                  dense
+                  style="min-width: 100px"
                 />
               </div>
             </div>
@@ -70,27 +90,35 @@
       <div dir="ltr">
         <q-btn color="primary" label="بررسی اطلاعات" />
       </div>
-      <router-view
-    /></q-card-section>
+      <!-- <router-view
+    /> -->
+    </q-card-section>
   </q-card>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-const firstname = '';
-const lastname = '';
+interface MyProps {
+  modelValue: {
+    firstName: string;
+    lastName: string;
+    nationalCode: string;
+    mobile: string;
+    mobileStatus: boolean;
+    email: string;
+    password: string;
+    iban: string;
+    ibanStatus: boolean;
+    birthday: string;
+    eghtesadiCode: string;
+    job: string;
+  };
+}
+
 const right = 'flase';
-const password = '';
-const model = ref();
-const options = ref();
-const loadData1 = () => {
-  for (let a = 1; a < options.value.length; a++) {
-    console.log(a + 1);
-  }
-};
-loadData1();
-const mod = ref();
-const option2 = [
+const day = ref();
+const optionsDays = ref<number[]>([]);
+const optionsMounth = [
   'فروردین',
   'اردیبهشت',
   'خرداد',
@@ -104,14 +132,18 @@ const option2 = [
   'بهمن',
   'اسفند',
 ];
+const optionsYears = ref<number[]>([]);
 
-// const dialog1 = ref(false);
-const model1 = ref();
-const option3 = ref();
-const loadData = () => {
-  for (let a = 1336, b = +1; b < option3.value.length; a + 1) {
-    console.log(a + b);
+const mounth = ref();
+const years = ref();
+defineProps<MyProps>();
+const setDate = () => {
+  for (let a = 1; a <= 31; a++) {
+    optionsDays.value.push(a);
+  }
+  for (let i = 1403; i >= 1360; i--) {
+    optionsYears.value.push(i);
   }
 };
-loadData();
+setDate();
 </script>

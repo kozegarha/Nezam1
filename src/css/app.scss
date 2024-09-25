@@ -1,1 +1,8 @@
 // app global css in SCSS form
+.q-drawer .q-layout__shadow:after {
+  box-shadow: none;
+}
+.q-drawer {
+  background-size: cover !important;
+  border-right: 1px solid #e8e8e8 !important;
+}

@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-<RegisterComponent></RegisterComponent>
+    <RegisterComponent></RegisterComponent>
   </q-page>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <q-form @submit="onSubmit" class="q-gutter-y-lg" style="width: 400px" >
+  <q-form @submit="onSubmit" class="q-gutter-y-lg" style="width: 400px">
     <div>
       <div class="row justify-center">
         <div class="self-center q-ml-xs text-bold" style="font-size: 20px">
@@ -13,9 +13,7 @@
 
       <div>
         <h4 class="row justify-center q-mb-sm text-bold">welcome Back</h4>
-        <p class="row justify-center text-grey-5">
-          please sign up
-        </p>
+        <p class="row justify-center text-grey-5">please sign up</p>
       </div>
     </div>
     <q-input
@@ -37,7 +35,6 @@
       label="fathername"
     />
     <q-input standout class="q-my-xs" v-model="form.mobile" label="mobile" />
-    <!-- <a href="#" style="font-size: 10px">?forgot Password</a> -->
     <q-btn standout class="full-width" label="sign up" glossy color="purple" />
     <div class="row items-center">
       <div class="col-5">
@@ -103,12 +100,20 @@
 <script lang="ts" setup>
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
-const form = ref({
-  firstname:'',
-  lastname:'',
-  fathername:'',
-  mobile:'',
-});
+
+interface FormDataType {
+  firstname: string;
+  lastname: string;
+  fathername: string;
+  mobile: string;
+}
+const FormDataTypeDefault = {
+  firstname: '',
+  lastname: '',
+  fathername: '',
+  mobile: '',
+};
+const form = ref<FormDataType>(FormDataTypeDefault);
 const showSubmitDialog = ref(false);
 const showResetDialog = ref(false);
 
@@ -118,12 +123,7 @@ const confirmSubmit = () => {
 
 const resetForm = () => {
   showResetDialog.value = false;
-  form.value = {
-    firstname:'',
-    lastname: '',
-    fathername:'',
-    mobile:'',
-  };
+  form.value = FormDataTypeDefault;
   console.log('Form reset.');
 };
 
@@ -142,14 +142,3 @@ const triggerTwice = () => {
   });
 };
 </script>
-
-<style scoped>
-.form-container {
-  width: 300px;
-  margin: 0 auto;
-}
-
-.q-page {
-  min-height: 100vh;
-}
-</style>
