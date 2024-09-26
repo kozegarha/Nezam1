@@ -1,9 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-<LOginComponet></LOginComponet>
+    <LoginComponent></LoginComponent>
   </q-page>
 </template>
 
 <script lang="ts" setup>
-import LOginComponet from 'src/components/loginComponent.vue';
+import LoginComponent from 'src/components/LoginComponent.vue';
 </script>

@@ -35,7 +35,6 @@
       label="fathername"
     />
     <q-input standout class="q-my-xs" v-model="form.mobile" label="mobile" />
-    <!-- <a href="#" style="font-size: 10px">?forgot Password</a> -->
     <q-btn standout class="full-width" label="sign up" glossy color="purple" />
     <div class="row items-center">
       <div class="col-5">
@@ -101,12 +100,28 @@
 <script lang="ts" setup>
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
+<<<<<<< HEAD
 const form = ref({
+=======
+
+interface FormDataType {
+  firstname: string;
+  lastname: string;
+  fathername: string;
+  mobile: string;
+}
+const FormDataTypeDefault = {
+>>>>>>> fe5fb99b4f42f2ec25f419f0f401f1d33b23a7e3
   firstname: '',
   lastname: '',
   fathername: '',
   mobile: '',
+<<<<<<< HEAD
 });
+=======
+};
+const form = ref<FormDataType>(FormDataTypeDefault);
+>>>>>>> fe5fb99b4f42f2ec25f419f0f401f1d33b23a7e3
 const showSubmitDialog = ref(false);
 const showResetDialog = ref(false);
 
@@ -116,12 +131,16 @@ const confirmSubmit = () => {
 
 const resetForm = () => {
   showResetDialog.value = false;
+<<<<<<< HEAD
   form.value = {
     firstname: '',
     lastname: '',
     fathername: '',
     mobile: '',
   };
+=======
+  form.value = FormDataTypeDefault;
+>>>>>>> fe5fb99b4f42f2ec25f419f0f401f1d33b23a7e3
   console.log('Form reset.');
 };
 
@@ -140,14 +159,3 @@ const triggerTwice = () => {
   });
 };
 </script>
-
-<style scoped>
-.form-container {
-  width: 300px;
-  margin: 0 auto;
-}
-
-.q-page {
-  min-height: 100vh;
-}
-</style>

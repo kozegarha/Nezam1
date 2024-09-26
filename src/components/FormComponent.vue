@@ -3,7 +3,7 @@
     <q-card-section class="row">
       <div class="col-md-6 self-center">
         <q-avatar size="126px">
-          <img src="profile.jpg" />
+          <img src="/profile.jpg" />
         </q-avatar>
       </div>
       <div class="col-md-6" dir="rtl">

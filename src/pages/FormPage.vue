@@ -1,8 +1,6 @@
 <template>
-  <q-page>
-
-        <FormComponent></FormComponent>
-
+  <q-page class="flex flex-center" style="padding-right: 300px">
+    <FormComponent></FormComponent>
   </q-page>
 </template>
 

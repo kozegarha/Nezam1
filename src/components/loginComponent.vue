@@ -1,5 +1,5 @@
 <template>
-  <q-form @submit="onConfirmSubmit" class="q-gutter-y-lg" style="width: 400px">
+  <q-form @submit="onConfirmSubmit" class="q-gutter-y-lg">
     <div>
       <div class="row justify-center">
         <div class="self-center q-ml-xs text-bold" style="font-size: 20px">
@@ -32,7 +32,7 @@
       label="Password "
     />
 
-    <a href="#" style="font-size: 10px">?forgot Password</a>
+    <a href="#" style="font-size: 12px" dir="ltr">forgot Password?</a>
 
     <q-btn
       standout
@@ -48,7 +48,7 @@
       </div>
       <div class="col-2 text-center">login</div>
       <div class="col-5">
-        <q-separator color="black" inset class="full-width"  />
+        <q-separator color="black" inset class="full-width" />
       </div>
     </div>
 
@@ -60,7 +60,7 @@
           class="full-width"
           outline
           color="grey-7"
-          ><q-icon size="20px"> <img src="facebook.svg" /> </q-icon
+          ><q-icon size="sm"> <img src="facebook.svg" /> </q-icon
         ></q-btn>
       </div>
       <div class="col-sm-12 col-md-6 q-pr-sm q-my-xs col-xs-12">
@@ -71,11 +71,11 @@
           outline
           color="grey-7"
         >
-          <q-icon size="20px"> <img src="google.png" /> </q-icon>
+          <q-icon size="sm"> <img src="google.png" /> </q-icon>
         </q-btn>
       </div>
       <div class="row justify-center">
-        <a href="Register" class="self-center" style="font-size: 10px">
+        <a href="Register" class="self-center" style="font-size: 12px">
           sign up</a
         >
         <div class="row justify-center">?Do not have an account</div>
@@ -148,14 +148,3 @@ const triggerTwice = () => {
   });
 };
 </script>
-
-<style scoped>
-.form-container {
-  width: 300px;
-  margin: 0 auto;
-}
-
-.q-page {
-  min-height: 100vh;
-}
-</style>
