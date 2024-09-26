@@ -28,17 +28,15 @@
             <q-icon
               class="cursor-pointer"
               name="edit"
-              size="md"
+              size="xs"
               @click="openDialog"
             />
-
-            <q-dialog v-model="showDialog" persistent
-              ><FileComponent></FileComponent>
-            </q-dialog>
           </div>
         </div>
       </q-card>
-
+      <q-dialog v-model="showDialog">
+        <NameComponent></NameComponent>
+      </q-dialog>
       <q-card class="col-6" flat bordered dense>
         <div class="row items-center q-mr-md col-6">
           <div class="col-6">
@@ -52,12 +50,10 @@
               size="md"
               @click="openDialog"
             />
-            <q-dialog v-model="showDialog" persistent
-              ><FilComponent></FilComponent>
-            </q-dialog>
           </div>
         </div>
       </q-card>
+      <q-dialog v-model="showDialog"><NameComponent></NameComponent> </q-dialog>
       <q-card class="col-6" flat bordered dense>
         <div class="row items-center q-mr-md col-6">
           <div class="col-6">
@@ -177,7 +173,8 @@
         </div>
       </q-card>
 
-      <q-card class="col-6" flat bordered dense
+      09d708c2-88ce-4c54-af80-d0f862486f0a
+            <q-card class="col-6" flat bordered dense
         ><div class="d-flex justify-between q-mr-md">
           <div class="row justify-between">
             <p class="text-grey"></p>
@@ -205,10 +202,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import FilComponent from 'src/components/FilComponent.vue';
+// import NameComponent from 'src/components/NameComponent.vue';
 import MobileComponent from 'src/components/MobileComponent.vue';
-const showDialog = ref(false);
+// import FormComponent from './FormComponent.vue';
+import NameComponent from 'src/components/NameComponent.vue';
+
+const showDialog = ref(true);
 const openDialog = () => {
-  showDialog.value = true;
+  showDialog.value = false;
 };
 </script>

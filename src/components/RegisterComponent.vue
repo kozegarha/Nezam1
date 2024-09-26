@@ -1,5 +1,5 @@
 <template>
-  <q-form @submit="onSubmit" class="q-gutter-y-lg" style="width: 400px" >
+  <q-form @submit="onSubmit" class="q-gutter-y-lg" style="width: 400px">
     <div>
       <div class="row justify-center">
         <div class="self-center q-ml-xs text-bold" style="font-size: 20px">
@@ -13,9 +13,7 @@
 
       <div>
         <h4 class="row justify-center q-mb-sm text-bold">welcome Back</h4>
-        <p class="row justify-center text-grey-5">
-          please sign up
-        </p>
+        <p class="row justify-center text-grey-5">please sign up</p>
       </div>
     </div>
     <q-input
@@ -104,10 +102,10 @@
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
 const form = ref({
-  firstname:'',
-  lastname:'',
-  fathername:'',
-  mobile:'',
+  firstname: '',
+  lastname: '',
+  fathername: '',
+  mobile: '',
 });
 const showSubmitDialog = ref(false);
 const showResetDialog = ref(false);
@@ -119,10 +117,10 @@ const confirmSubmit = () => {
 const resetForm = () => {
   showResetDialog.value = false;
   form.value = {
-    firstname:'',
+    firstname: '',
     lastname: '',
-    fathername:'',
-    mobile:'',
+    fathername: '',
+    mobile: '',
   };
   console.log('Form reset.');
 };

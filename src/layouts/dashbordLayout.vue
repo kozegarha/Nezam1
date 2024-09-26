@@ -16,17 +16,21 @@
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" elevated>
       <!-- drawer content -->
       <q-list bordered>
-        <q-item to="./Form">
+        <q-item to="/dashboard/form">
           <q-item-section>داشبورد</q-item-section>
         </q-item>
-        <q-item to="./portal">
+        <q-item to="/dashboard/portal">
           <q-item-section>پروفایل</q-item-section>
         </q-item>
-        <q-item to="./">
+        <q-item to="/">
           <q-item-section>خروج</q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
   </q-layout>
 </template>
 

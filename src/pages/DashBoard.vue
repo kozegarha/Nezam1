@@ -1,9 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-    <MobileComponent> </MobileComponent>
+    <DashBoard></DashBoard>
   </q-page>
 </template>
 
 <script lang="ts" setup>
-import MobileComponent from 'src/components/MobileComponent.vue';
+import DashBoard from 'src/components/DashBoardComponent.vue';
 </script>

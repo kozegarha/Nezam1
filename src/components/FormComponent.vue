@@ -24,4 +24,5 @@
     </q-card-section>
   </q-card>
 </template>
-<style></style>
+<style>
+</style>

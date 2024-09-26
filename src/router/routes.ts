@@ -13,9 +13,10 @@ const routes: RouteRecordRaw[] = [
     path: '/dashboard',
     component: () => import('layouts/dashbordLayout.vue'),
     children: [
-      { path: '/', component: () => import('pages/DashBorde.vue') },
-      { path: '/Form', component: () => import('pages/FormPage.vue') },
-      { path: '/portal', component: () => import('pages/PortalPage.vue') },
+      { path: '', component: () => import('pages/DashBoard.vue') },
+      { path: 'form', component: () => import('pages/FormPage.vue') },
+      { path: 'portal', component: () => import('pages/PortalPage.vue') },
+      
     ],
   },
   {
